@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMonitor.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Título principal -->
+            <Label Text="Monitor de Sistema"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   TextColor="SlateBlue"
+                   FontAttributes="Bold" />
+
+            <!-- Información del sistema: Tarjetas o Contenedores -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" BackgroundColor="WhiteSmoke">
+                <StackLayout>
+                    <Label Text="CPU" FontSize="18" TextColor="DarkSlateGray" />
+                    <Label x:Name="CpuLabel" Text="CPU: --- %" FontSize="22" TextColor="SteelBlue" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" BackgroundColor="WhiteSmoke">
+                <StackLayout>
+                    <Label Text="RAM" FontSize="18" TextColor="DarkSlateGray" />
+                    <Label x:Name="RamLabel" Text="RAM Libre: --- MB" FontSize="22" TextColor="MediumSeaGreen" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" BackgroundColor="WhiteSmoke">
+                <StackLayout>
+                    <Label Text="Temperatura" FontSize="18" TextColor="DarkSlateGray" />
+                    <Label x:Name="TempLabel" Text="Temp. CPU: --- °C" FontSize="22" TextColor="Tomato" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" BackgroundColor="WhiteSmoke">
+                <StackLayout>
+                    <Label Text="Almacenamiento" FontSize="18" TextColor="DarkSlateGray" />
+                    <Label x:Name="StorageLabel" Text="Almacenamiento: --- GB libres" FontSize="22" TextColor="SaddleBrown" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Botones -->
+            <Button Text="Actualizar"
+                    BackgroundColor="RoyalBlue"
+                    TextColor="White"
+                    CornerRadius="25"
+                    Padding="10"
+                    Clicked="OnRefreshClicked" />
+
+            <Button Text="Activar Notificación"
+                    BackgroundColor="MediumSeaGreen"
+                    TextColor="White"
+                    CornerRadius="25"
+                    Padding="10"
+                    Clicked="OnEnableNotificationClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
